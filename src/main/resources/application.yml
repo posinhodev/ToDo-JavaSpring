@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: todo-api
+  #se agrega esta linea de mvc para que sean comtible el swagger
+  #con versiones de spring superiores a la 2.5.8
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: posinhodev
+    password: posinhodev
+    url: "jdbc:h2:mem:todoapp;DB_CLOSE_ON_EXIT=FALSE"
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
